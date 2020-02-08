@@ -1,0 +1,854 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 11.5 (Ubuntu 11.5-1)
+-- Dumped by pg_dump version 11.5 (Ubuntu 11.5-1)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: pgcrypto; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION pgcrypto IS 'cryptographic functions';
+
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: cart; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.cart (
+    id bigint NOT NULL,
+    user_id bigint NOT NULL
+);
+
+
+ALTER TABLE public.cart OWNER TO postgres;
+
+--
+-- Name: cart_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.cart_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.cart_id_seq OWNER TO postgres;
+
+--
+-- Name: cart_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.cart_id_seq OWNED BY public.cart.id;
+
+
+--
+-- Name: cart_item; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.cart_item (
+    id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    product_id bigint NOT NULL,
+    quantity bigint NOT NULL
+);
+
+
+ALTER TABLE public.cart_item OWNER TO postgres;
+
+--
+-- Name: cart_item_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.cart_item_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.cart_item_id_seq OWNER TO postgres;
+
+--
+-- Name: cart_item_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.cart_item_id_seq OWNED BY public.cart_item.id;
+
+
+--
+-- Name: category; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.category (
+    id bigint NOT NULL,
+    title character varying(50) NOT NULL,
+    parent_id bigint
+);
+
+
+ALTER TABLE public.category OWNER TO postgres;
+
+--
+-- Name: category_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.category_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.category_id_seq OWNER TO postgres;
+
+--
+-- Name: category_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.category_id_seq OWNED BY public.category.id;
+
+
+--
+-- Name: order_item; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.order_item (
+    id bigint NOT NULL,
+    order_id bigint NOT NULL,
+    product_id bigint NOT NULL,
+    quantity bigint NOT NULL,
+    price integer NOT NULL,
+    total_price integer NOT NULL
+);
+
+
+ALTER TABLE public.order_item OWNER TO postgres;
+
+--
+-- Name: order_item_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.order_item_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.order_item_id_seq OWNER TO postgres;
+
+--
+-- Name: order_item_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.order_item_id_seq OWNED BY public.order_item.id;
+
+
+--
+-- Name: order_table; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.order_table (
+    id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    time_created timestamp without time zone NOT NULL,
+    payment_type character varying(50) NOT NULL,
+    address character varying(255) NOT NULL,
+    finalprice integer NOT NULL,
+    orderstatus character varying(50) NOT NULL,
+    quantity integer,
+    payment_status character varying(50) NOT NULL,
+    phone character varying(15) NOT NULL
+);
+
+
+ALTER TABLE public.order_table OWNER TO postgres;
+
+--
+-- Name: order_table_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.order_table_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.order_table_id_seq OWNER TO postgres;
+
+--
+-- Name: order_table_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.order_table_id_seq OWNED BY public.order_table.id;
+
+
+--
+-- Name: products; Type: TABLE; Schema: public; Owner: havach_imp
+--
+
+CREATE TABLE public.products (
+    description character varying(2048) NOT NULL,
+    price integer NOT NULL,
+    details_id bigint,
+    stock integer NOT NULL,
+    photo character varying(2048),
+    name character varying(255) NOT NULL,
+    category_id bigint NOT NULL,
+    active boolean NOT NULL,
+    id bigint NOT NULL
+);
+
+
+ALTER TABLE public.products OWNER TO havach_imp;
+
+--
+-- Name: products_id_seq; Type: SEQUENCE; Schema: public; Owner: havach_imp
+--
+
+CREATE SEQUENCE public.products_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.products_id_seq OWNER TO havach_imp;
+
+--
+-- Name: products_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: havach_imp
+--
+
+ALTER SEQUENCE public.products_id_seq OWNED BY public.products.id;
+
+
+--
+-- Name: roles; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.roles (
+    id bigint NOT NULL,
+    name character varying(20) NOT NULL
+);
+
+
+ALTER TABLE public.roles OWNER TO postgres;
+
+--
+-- Name: roles_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.roles_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.roles_id_seq OWNER TO postgres;
+
+--
+-- Name: roles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.roles_id_seq OWNED BY public.roles.id;
+
+
+--
+-- Name: user_contacts; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.user_contacts (
+    id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    phone character varying(50),
+    address character varying(255)
+);
+
+
+ALTER TABLE public.user_contacts OWNER TO postgres;
+
+--
+-- Name: user_contacts_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.user_contacts_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.user_contacts_id_seq OWNER TO postgres;
+
+--
+-- Name: user_contacts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.user_contacts_id_seq OWNED BY public.user_contacts.id;
+
+
+--
+-- Name: user_roles; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.user_roles (
+    user_id bigint NOT NULL,
+    role_id bigint NOT NULL
+);
+
+
+ALTER TABLE public.user_roles OWNER TO postgres;
+
+--
+-- Name: usr; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.usr (
+    id bigint NOT NULL,
+    first_name character varying(50) NOT NULL,
+    last_name character varying(50) NOT NULL,
+    password character varying(255) NOT NULL,
+    email character varying(50) NOT NULL,
+    active boolean,
+    code character varying(50)
+);
+
+
+ALTER TABLE public.usr OWNER TO postgres;
+
+--
+-- Name: usr_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.usr_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.usr_id_seq OWNER TO postgres;
+
+--
+-- Name: usr_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.usr_id_seq OWNED BY public.usr.id;
+
+
+--
+-- Name: cart id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.cart ALTER COLUMN id SET DEFAULT nextval('public.cart_id_seq'::regclass);
+
+
+--
+-- Name: cart_item id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.cart_item ALTER COLUMN id SET DEFAULT nextval('public.cart_item_id_seq'::regclass);
+
+
+--
+-- Name: category id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.category ALTER COLUMN id SET DEFAULT nextval('public.category_id_seq'::regclass);
+
+
+--
+-- Name: order_item id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.order_item ALTER COLUMN id SET DEFAULT nextval('public.order_item_id_seq'::regclass);
+
+
+--
+-- Name: order_table id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.order_table ALTER COLUMN id SET DEFAULT nextval('public.order_table_id_seq'::regclass);
+
+
+--
+-- Name: products id; Type: DEFAULT; Schema: public; Owner: havach_imp
+--
+
+ALTER TABLE ONLY public.products ALTER COLUMN id SET DEFAULT nextval('public.products_id_seq'::regclass);
+
+
+--
+-- Name: roles id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.roles ALTER COLUMN id SET DEFAULT nextval('public.roles_id_seq'::regclass);
+
+
+--
+-- Name: user_contacts id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_contacts ALTER COLUMN id SET DEFAULT nextval('public.user_contacts_id_seq'::regclass);
+
+
+--
+-- Name: usr id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.usr ALTER COLUMN id SET DEFAULT nextval('public.usr_id_seq'::regclass);
+
+
+--
+-- Data for Name: cart; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.cart (id, user_id) FROM stdin;
+1	1
+\.
+
+
+--
+-- Data for Name: cart_item; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.cart_item (id, user_id, product_id, quantity) FROM stdin;
+4	59	4	1
+23	1	5	1
+\.
+
+
+--
+-- Data for Name: category; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.category (id, title, parent_id) FROM stdin;
+13	category 1	\N
+14	sub category 1.1	13
+17	category 1.2	13
+18	category 1.3	13
+\.
+
+
+--
+-- Data for Name: order_item; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.order_item (id, order_id, product_id, quantity, price, total_price) FROM stdin;
+1	3	4	1	101	101
+2	5	4	1	101	101
+3	6	4	1	101	101
+4	8	4	1	101	101
+5	9	4	1	101	101
+6	10	4	50	101	5050
+7	11	4	30	101	3030
+8	12	4	10	101	1010
+9	13	4	4	101	404
+10	13	5	4	1000	4000
+11	14	4	5	101	505
+12	14	5	1	10000	10000
+13	15	5	1	10000	10000
+14	15	4	1	101	101
+15	16	5	3	10000	30000
+16	17	5	1	10000	10000
+\.
+
+
+--
+-- Data for Name: order_table; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.order_table (id, user_id, time_created, payment_type, address, finalprice, orderstatus, quantity, payment_status, phone) FROM stdin;
+6	1	2019-12-08 13:12:04.083	CARD_ON_SITE	12dassfsd fdsgeeee	101	PROCESSING	1	PENDING	12312321
+7	1	2019-12-08 13:12:10.996	CASH	12dassfsd fdsgeeee	0	PROCESSING	0	PENDING	12312321
+8	1	2019-12-08 13:18:47.544	CARD	12dassfsd fdsgeeee	101	FINISHED	1	PENDING	12312321
+9	1	2019-12-08 13:54:14.118	CARD_ON_SITE	12dassfsd fdsgeeee	101	PROCESSING	1	PENDING	12312321
+3	1	2019-12-08 11:20:46.192	CASH	12dassfsd fdsgeeee	101	FINISHED	1	PENDING	12312321
+5	1	2019-12-08 11:32:20.824	CASH	12dassfsd fdsgeeee	101	FINISHED	1	PENDING	12312321
+10	1	2019-12-09 21:43:02.139	CASH	12dassfsd fdsgeeee	5050	PROCESSING	50	PENDING	12312321
+11	1	2019-12-09 21:45:13.479	CASH	12dassfsd fdsgeeee	3030	PROCESSING	30	PENDING	12312321
+12	21	2019-12-09 22:17:18.335	CASH	Саратовская область, Энгельс, улица Ломоносова, дом 15, квартира 75	1010	CANCELED	10	PENDING	12548750574
+13	1	2019-12-09 23:27:01.178	CASH	12dassfsd fdsgeeee	4404	PROCESSING	8	PENDING	12312321
+14	62	2019-12-10 23:23:25.11	CASH	2-я Садовая улица, 95, 15	10505	CANCELED	6	PENDING	1234567890
+15	1	2019-12-12 00:51:02.559	CASH	12dassfsd fdsgeeee	10101	PROCESSING	2	PENDING	12312321
+16	62	2019-12-12 09:52:10.762	CARD	2-я Садовая улица, 95, 15	30000	PROCESSING	3	PENDING	1234567890
+17	62	2019-12-12 09:52:34.595	CASH	2-я Садовая улица, 95, 15	10000	DELIVERED	1	PENDING	1234567890
+\.
+
+
+--
+-- Data for Name: products; Type: TABLE DATA; Schema: public; Owner: havach_imp
+--
+
+COPY public.products (description, price, details_id, stock, photo, name, category_id, active, id) FROM stdin;
+asdasdasf des fdsf adsf\r\nfsdf \r\ndszg dfzg zgdfg dfxfdxg dfg	101	0	0	b2049ef3-78f3-481d-a8df-d4de1d6ba08e.Screenshot from 2019-11-24 21-05-10.png	test1	13	t	4
+new 11ddddddd\r\nsfsdf	10000	0	34	\N	test2	18	t	5
+\.
+
+
+--
+-- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.roles (id, name) FROM stdin;
+1	ADMIN
+2	USER
+\.
+
+
+--
+-- Data for Name: user_contacts; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.user_contacts (id, user_id, phone, address) FROM stdin;
+1	1	12312321	12dassfsd fdsgeeee
+2	62	1234567890	2-я Садовая улица, 95, 15
+\.
+
+
+--
+-- Data for Name: user_roles; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.user_roles (user_id, role_id) FROM stdin;
+22	2
+24	2
+25	2
+27	2
+23	1
+1	1
+1	2
+59	2
+21	2
+60	2
+61	2
+62	2
+2	1
+2	2
+92	2
+93	2
+94	2
+96	2
+95	2
+97	2
+98	2
+101	2
+104	2
+105	2
+107	2
+109	2
+112	2
+113	2
+114	2
+\.
+
+
+--
+-- Data for Name: usr; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.usr (id, first_name, last_name, password, email, active, code) FROM stdin;
+92	Павел	Филин	$2a$08$QGoIgdlyIFUVBL33DL.BWexkdjkRE/adpJ5AhXZ05W9l9hFrIK6cy	tedsat@f.com	f	bfece630-479c-4860-b986-ada1629bbedc
+93	_arachni_trainer_b643e354006b19e657645b4944d151be	1	$2a$08$OxevUCnFZ81DpFcgHgz8OuxLEn8HDsfemKfKfbEEigYBbGiR9J00u	www.e377cf63335eb967f19193f103a7234b.com/?a@a.com	f	6bfb4ead-f905-4da2-afb4-4027b57c407f
+94	1	1	$2a$08$mOZ9dgclIYTmY7y53BBYl..xC5od4nxw03aOWjsDkn1LmJTi.2X1y	www.2b8393e56a85afbaf865f150d05c1958.com/?a@a.com	f	c18c61b7-d200-495a-8c6a-15cf67f752b2
+95	arachni_name	arachni_name	$2a$08$jkgX1FE0YmQ6Ve8UIPs1QOx5J7XUwKAfvEc9.CYVNR1CYnba6gCfW	arachni@email.gr	f	3110b93e-053d-4e1c-809f-549b81422beb
+97	arachni_name	arachni_name	$2a$08$nHg4HJGhGRfy7ntCceWm6e6Yik0AYH1QeYY0W4hijsNbC.5LY0lk6	arachni@email.gr	f	b112a1e5-e791-4b5e-9d58-b6cb09e71148
+96	arachni_name	arachni_name#^($!@$)(()))******	$2a$08$W/koMB4W1ZZQqkeV.xuyD.QVEMLZtmupfeWKltMg8VT7RqGFTsa2G	arachni@email.gr	f	149eb6f8-dab9-4196-9b7e-337c3d19a7e3
+98	\r\nX-CRLF-Safe-df4317d3bf48e093e45c5a9e5d7ef0e8: no	arachni_name	$2a$08$drmPLTeQgyw59FyH7dHIde1P4VSooSZ3bhpe6JQAfsOjzsfxhJ2vi	arachni@email.gr	f	56fb2e66-4005-4115-9aac-e43d4f9fa3d2
+101	arachni_name#^($!@$)(()))******	arachni_name	$2a$08$O21SJf1VUI1JEUsrFq7HKubnmQZyrB9NfEZLK2LZ5y7Zvz7fZvmB2	arachni@email.gr	f	29fafea6-427f-4e8c-ab46-42132d77c6fa
+22	test	tests	$2a$08$.lJC1SzKrZMpuKQ/uxAQlekmeAVPJv2XZgkGTyY9sYKN.UD3OZ8Dq	test@f.com	t	\N
+24	ggg	ggg	$2a$08$pwg4AEXMb5m/Gmp/sA.naOsJb2u.RS4hbDN.xyGEqXn1DkGr36wTu	123@d	t	\N
+25	213	213	$2a$08$9nCfBpmJymquKXHCHbJYzORN0lKb4PpyjzvZmQL1taVvGTkJe/avu	sdfsdf@SDFDS	t	\N
+27	fdgfgd	sgdfg	$2a$08$3nReGpTMtop99AWNHW4LR.zU1iM8yn.V9hEW23ty1SCKLHkkKqO/C	dsgfdsg@dgdfg	t	\N
+23	gg	gg	$2a$08$N2uHSn9rkMryBKErYfMjVeq1H3pMSvUDOeDYLU.4zciBrZyjLsfG2	gg@ff.com	t	\N
+1	fuse	fnameuser	$2a$08$MIF6//wKd8NWOtBH9FEDQOQ2IR0Hh5Ew5vf0XxXc.JqCGyamktXLq	a@a.com	t	\N
+59	Veni	Vena	$2a$08$jyvhniQl62EB2AGcG1dCBOMJWDfmMHXBpYYWQl5wBPYdP.a99Jufa	komgkh30@yandex.ru	t	\N
+21	Павел	Филин	$2a$08$8UIudONI4HX280eASHQodOnDqR7JYB7KUKUUu8AZ5peH5gtIqSE0C	jedila@idea-mail.net	t	\N
+60	Mail	MailTest	$2a$08$1ijLYPsczHTSsIPp4bIOcu/i1DME7ubr2Tvu3704mtZ0jV9M0BbAK	dorigey579@mail1.top	t	\N
+61	testmail2	testmail2	$2a$08$oUjENEYVCkUork1uTlMNY.bfEaSUNOcInrJA6cclpBDHHmNyIQL/u	testmail@mailhub.pro	f	669b17e3-24d8-4819-a017-975a80d19409
+104	arachni_name	\r\nX-CRLF-Safe-df4317d3bf48e093e45c5a9e5d7ef0e8: no	$2a$08$G6OJMJnMyTBCJ1.tVDdjhe7onktSD4V/Njav3emfH/lq.wOe5UP6a	arachni@email.gr	f	eb5397a7-1a0f-4d11-bb00-e32605c85800
+62	Павел	Филин	$2a$08$TOdr/UDcZ9ofnaQ4WXbx0OzIj2FO9sEbtMyNE2M4y7xZ1pU/If6cW	pavel164rus1@gmail.com	t	\N
+2	user2	username2	$2a$08$jsvPKbrQh9vDcfBs5Ukbtun4KX3swZGy43b4dMkysSxzyi4YXzF26	a2@aaa.com	t	\N
+105	hTtP://tests.arachni-scanner.com/rfi.md5.txt	arachni_name	$2a$08$OHcRtOXkqhp2zeGpT5GlWuJs/fAxcucZNfP8CAWqqWsUvsMgnMq9S	arachni@email.gr	f	7c8b2096-4b83-4f03-906d-724c45478c1f
+70	administrator	administrator	$2a$08$C.fnlj6yCKFCpyed7uH96e31QRiIlEOp.HiilwyFYZyS8bo9GPu3K	admin@admin.admin	t	2fc96cf4-8c1c-4e5e-ab31-339e099bb069
+69	test	test	$2a$08$DvPZS6PLEzHxm7I1UVRQg.4RHicxB1.r5.I75lRfdloaXyVVooW7e	user@user.user	t	bf4eeb7e-6b23-4292-9d13-225c4653733d
+71	admin2	admin2	$2a$08$JZDJjR0WFFIeyYdK6T7ns.BNZ8XXeVJFMqd3q2RZ8E7ZQ3blqnakS	admin2@admin.admin	t	7ec718dc-121a-4fb4-9d39-fa3bbbd7bea4
+107	arachni_name	arachni_name	$2a$08$noxnmoucwnRQv07sLlxKaOLT2KDi8vKczDXlnhJRoZhJK8Znr9oMm	arachni@email.gr	f	5254b341-3593-41b0-8099-35900bf17927
+109	arachni_name	arachni_name	$2a$08$yJFZgKzDu1.XM8k7fuOBtu2bOwYtnH3U1n/OJnl0vAAkDpUcVyfvm	arachni@email.gr	f	cb29f239-e0dc-4e4c-bf4c-83402a3ee734
+112	arachni_name	arachni_name	$2a$08$x4dXqr/r/uO58Iw.xKab6ugCA.9YrbIv0lh1a3upaJxHWQSSwMfv.	arachni@email.gr	f	057f8944-81d2-4116-bc58-e1f4b6350b91
+113	arachni_name	arachni_name	$2a$08$8jNuMju7RcM9wt5H6vOoXelaB/NmtxCG9UCEhJMlOXdPRoYfEGG5q	arachni@email.gr	f	06166966-25a5-4f8e-94a6-f2ca938ce979
+114	arachni_name	arachni_name	$2a$08$0IEJI7sNVpHPWeSWUIuuGugvqm708zPJO3udvGE1nNJEhpenxJ62W	arachni@email.gr	f	92fe0e95-3282-439f-a45d-120768fb6bb0
+\.
+
+
+--
+-- Name: cart_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.cart_id_seq', 17, true);
+
+
+--
+-- Name: cart_item_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.cart_item_id_seq', 23, true);
+
+
+--
+-- Name: category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.category_id_seq', 22, true);
+
+
+--
+-- Name: order_item_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.order_item_id_seq', 16, true);
+
+
+--
+-- Name: order_table_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.order_table_id_seq', 1, false);
+
+
+--
+-- Name: products_id_seq; Type: SEQUENCE SET; Schema: public; Owner: havach_imp
+--
+
+SELECT pg_catalog.setval('public.products_id_seq', 5, true);
+
+
+--
+-- Name: roles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.roles_id_seq', 2, true);
+
+
+--
+-- Name: user_contacts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.user_contacts_id_seq', 2, true);
+
+
+--
+-- Name: usr_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.usr_id_seq', 114, true);
+
+
+--
+-- Name: cart_item cart_item_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.cart_item
+    ADD CONSTRAINT cart_item_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: cart cart_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.cart
+    ADD CONSTRAINT cart_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: category category_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.category
+    ADD CONSTRAINT category_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: category category_title_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.category
+    ADD CONSTRAINT category_title_key UNIQUE (title);
+
+
+--
+-- Name: order_item order_item_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.order_item
+    ADD CONSTRAINT order_item_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: order_table order_table_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.order_table
+    ADD CONSTRAINT order_table_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: roles pk_roles; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.roles
+    ADD CONSTRAINT pk_roles PRIMARY KEY (id);
+
+
+--
+-- Name: user_roles pk_user_role; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_roles
+    ADD CONSTRAINT pk_user_role PRIMARY KEY (user_id, role_id);
+
+
+--
+-- Name: usr pk_usr; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.usr
+    ADD CONSTRAINT pk_usr PRIMARY KEY (id);
+
+
+--
+-- Name: products products_pk; Type: CONSTRAINT; Schema: public; Owner: havach_imp
+--
+
+ALTER TABLE ONLY public.products
+    ADD CONSTRAINT products_pk PRIMARY KEY (id);
+
+
+--
+-- Name: user_contacts user_contacts_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_contacts
+    ADD CONSTRAINT user_contacts_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: cart_item cart_item_usr__fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.cart_item
+    ADD CONSTRAINT cart_item_usr__fk FOREIGN KEY (user_id) REFERENCES public.usr(id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- Name: products fk_category_category; Type: FK CONSTRAINT; Schema: public; Owner: havach_imp
+--
+
+ALTER TABLE ONLY public.products
+    ADD CONSTRAINT fk_category_category FOREIGN KEY (category_id) REFERENCES public.category(id) ON DELETE RESTRICT;
+
+
+--
+-- Name: order_item fk_order_id_order; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.order_item
+    ADD CONSTRAINT fk_order_id_order FOREIGN KEY (order_id) REFERENCES public.order_table(id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- Name: order_item fk_product_id_products; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.order_item
+    ADD CONSTRAINT fk_product_id_products FOREIGN KEY (product_id) REFERENCES public.products(id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- Name: cart_item fk_product_id_products; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.cart_item
+    ADD CONSTRAINT fk_product_id_products FOREIGN KEY (product_id) REFERENCES public.products(id) ON UPDATE CASCADE ON DELETE CASCADE;
+
+
+--
+-- Name: user_roles fk_user_id_usr; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_roles
+    ADD CONSTRAINT fk_user_id_usr FOREIGN KEY (user_id) REFERENCES public.usr(id) ON DELETE RESTRICT;
+
+
+--
+-- Name: order_table fk_user_id_usr; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.order_table
+    ADD CONSTRAINT fk_user_id_usr FOREIGN KEY (user_id) REFERENCES public.usr(id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- Name: cart fk_user_id_usr; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.cart
+    ADD CONSTRAINT fk_user_id_usr FOREIGN KEY (user_id) REFERENCES public.usr(id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- Name: user_contacts fk_user_id_usr; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_contacts
+    ADD CONSTRAINT fk_user_id_usr FOREIGN KEY (user_id) REFERENCES public.usr(id) ON DELETE RESTRICT;
+
+
+--
+-- Name: user_roles fk_user_role_roles; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.user_roles
+    ADD CONSTRAINT fk_user_role_roles FOREIGN KEY (role_id) REFERENCES public.roles(id) ON DELETE RESTRICT;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

@@ -1,0 +1,68 @@
+
+.centered-form {
+    margin-top: 100px;;
+}
+
+/*.centered-form .panel{*/
+/*    background: rgba(255, 255, 255, 0.8);*/
+/*    box-shadow: rgba(0, 0, 0, 0.44) 20px 20px 20px;*/
+/*}*/
+
+.log-up-button {
+    border-radius: 50px;
+    width: 50%;
+}
+
+#cart-button {
+    width: 100px;
+}
+
+.category-display td,
+.admin-product-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.my-cards {
+    display: inline-block;
+    column-break-inside: avoid;
+}
+
+.box {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40%;
+    padding-bottom: 40%;
+}
+
+.product-attr {
+    font-size: 2em;
+}
+
+.product-name {
+    font-size: 45px;
+    font-family: "Bebas Neue";
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.admin-nav-link {
+    color: #d60101;
+}
+
+.admin-nav-link:hover {
+    color: #5b0303;
+}
+
+.photo-table-product-list {
+    width: 100px;
+}
+
+.product-name-list {
+    font-size: 2rem;
+}
+
+.product-price-list{
+    font-size: 2rem;
+    margin-bottom: -15px;
+}
