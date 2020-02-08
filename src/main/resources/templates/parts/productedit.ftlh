@@ -45,7 +45,7 @@
                     </label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-green text-white">Sign in</button>
         </form>
     </div>
 </div>

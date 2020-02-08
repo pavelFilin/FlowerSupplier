@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.controller.DTO;
+package ru.example.controller.DTO;
 
 import lombok.Data;
 

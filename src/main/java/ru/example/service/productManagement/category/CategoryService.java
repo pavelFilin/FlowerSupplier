@@ -1,7 +1,7 @@
-package ru.filin.HavachMVC.service.productManagement.category;
+package ru.example.service.productManagement.category;
 
-import ru.filin.HavachMVC.model.productManagement.entities.Category;
-import ru.filin.HavachMVC.service.BaseService;
+import ru.example.model.productManagement.entities.Category;
+import ru.example.service.BaseService;
 
 import java.util.List;
 

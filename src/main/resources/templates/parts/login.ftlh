@@ -1,7 +1,7 @@
 <#macro logout>
     <form action="/logout" method="post">
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-        <input class="btn badge-primary mt-1 btn-sm " type="submit" value="Logout"/>
+        <input class="btn badge-primary mt-1 btn-sm " type="submit" value="Выйти"/>
     </form>
 </#macro>
 
@@ -13,10 +13,9 @@
                 <div class="col-xs-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
                     <div class="panel panel-default shadow p-3 mb-5 bg-white rounded">
                         <div class="panel-heading">
-                            <#if isRegisterForm><h3 class="panel-title">Please sign up <small class="text-muted">It's
-                                    free!</small></h3>
+                            <#if isRegisterForm><h3 class="panel-title">Зарегистрироваться</h3>
                             <#else>
-                                <h3 class="panel-title">Please sign in </h3>
+                                <h3 class="panel-title">Войти</h3>
                             </#if>
 
                         </div>
@@ -36,7 +35,7 @@
                                                        <#if user??>
                                                            value="${user.firstName?if_exists}"
                                                        </#if>
-                                                       placeholder="First Name">
+                                                       placeholder="Имя">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
@@ -46,7 +45,7 @@
                                                         <#if user??>
                                                             value="${user.lastName?if_exists}"
                                                         </#if>
-                                                       placeholder="Last Name">
+                                                       placeholder="Фамилия">
                                             </div>
                                         </div>
                                     </div>
@@ -58,7 +57,7 @@
                                             <#if user??>
                                                 value="${user.email?if_exists}"
                                             </#if>
-                                           placeholder="Email Address">
+                                           placeholder="example@email.com">
                                 </div>
 
                                 <#if isRegisterForm>
@@ -66,14 +65,14 @@
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
                                                 <input type="password" name="password" id="password"
-                                                       class="form-control input-sm" placeholder="Password">
+                                                       class="form-control input-sm" placeholder="Пароль">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
                                                 <input type="password" name="passwordConfirmation"
                                                        id="password_confirmation" class="form-control input-sm"
-                                                       placeholder="Confirm Password">
+                                                       placeholder="Подтвердите пароль">
                                             </div>
                                         </div>
                                     </div>
@@ -82,14 +81,13 @@
                                         <div class="col-xs-12 col-sm-12 col-md-12">
                                             <div class="form-group">
                                                 <input type="password" name="password" id="password"
-                                                       class="form-control input-sm" placeholder="Password">
+                                                       class="form-control input-sm" placeholder="Пароль">
                                             </div>
                                         </div>
                                     </div>
                                 </#if>
                                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                                <input type="submit" <#if isRegisterForm>value="Sing up" <#else>value="Sing in"</#if>
-                                       class="btn btn-info btn-block log-up-button">
+                                <input class="btn btn-green btn-block log-up-button text-white" type="submit" <#if isRegisterForm>value="Зарегистрироваться" <#else>value="Войти"</#if>>
                             </form>
                         </div>
                     </div>

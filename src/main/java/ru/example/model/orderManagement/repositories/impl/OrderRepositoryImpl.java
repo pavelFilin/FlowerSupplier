@@ -1,16 +1,16 @@
-package ru.filin.HavachMVC.model.orderManagement.repositories.impl;
+package ru.example.model.orderManagement.repositories.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import ru.filin.HavachMVC.constants.OrderStatus;
-import ru.filin.HavachMVC.model.orderManagement.entities.CartItem;
-import ru.filin.HavachMVC.model.orderManagement.entities.Order;
-import ru.filin.HavachMVC.model.orderManagement.entities.OrderItemFull;
-import ru.filin.HavachMVC.model.orderManagement.repositories.OrderRepository;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
-import ru.filin.HavachMVC.model.productManagement.repositories.product.ProductRepository;
+import ru.example.constants.OrderStatus;
+import ru.example.model.orderManagement.entities.Order;
+import ru.example.model.orderManagement.repositories.OrderRepository;
+import ru.example.model.productManagement.entities.Product;
+import ru.example.model.orderManagement.entities.CartItem;
+import ru.example.model.orderManagement.entities.OrderItemFull;
+import ru.example.model.productManagement.repositories.product.ProductRepository;
 
 import java.util.HashMap;
 import java.util.List;

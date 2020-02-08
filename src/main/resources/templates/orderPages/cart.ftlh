@@ -9,9 +9,9 @@
             <table class="table table-bordered table-hover admin-product-table">
                 <thead class="thead-dark">
                 <th></th>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
+                <th>Наименование</th>
+                <th>Количество</th>
+                <th>Цена</th>
                 </thead>
                 <tbody class="table-striped">
                 <#list cart as cartItem>
@@ -27,7 +27,7 @@
                 </#list>
                 <tr class="bg-info text-light">
                     <td></td>
-                    <td>Total</td>
+                    <td>Итого</td>
                     <td>${totalQuantity}</td>
                     <td>${totalPrice}</td>
                 </tr>
@@ -40,35 +40,35 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="phone">Phone</label>
+                            <label for="phone">Телефон</label>
                             <input name="phone" minlength="3" maxlength="15"
                                    <#if userContacts??>value="${userContacts.phone!}"</#if> type="text"
-                                   class="form-control" id="phone" placeholder="phone">
+                                   class="form-control" id="phone" placeholder="+7**********">
                         </div>
 
                         <div class="form-group">
-                            <label for="address">Address</label>
+                            <label for="address">Адрес</label>
                             <input name="address" minlength="3" maxlength="255"
                                    <#if userContacts??>value="${userContacts.address!}"</#if> type="text"
-                                   class="form-control" id="address" placeholder="address">
+                                   class="form-control" id="address" placeholder="Адрес">
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h3>Chose payment type</h3>
+                        <h3>Тип оплаты</h3>
                         <div class="row ">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" checked type="radio" name="paymentType" id="cash"
                                        value="CASH">
-                                <label class="form-check-label" for="cash">cash</label>
+                                <label class="form-check-label" for="cash">Наличными</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="paymentType" id="card" value="CARD">
-                                <label class="form-check-label" for="card">card</label>
+                                <label class="form-check-label" for="card">Картой</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="paymentType" id="inlineRadio3"
                                        value=CARD_ON_SITE>
-                                <label class="form-check-label" for="inlineRadio3">card on site</label>
+                                <label class="form-check-label" for="inlineRadio3">Картой на месте</label>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                 <#if cart?? && cart?size gt 0>
                     <div class="row">
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block mt-3">Buy</button>
+                        <button type="submit" class="btn btn-green text-white btn-lg btn-block mt-3">Оформить заказ</button>
                     </div>
                 </#if>
             </form>

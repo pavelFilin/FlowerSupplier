@@ -1,12 +1,12 @@
-package ru.filin.HavachMVC.controller.productManagement.category.impl;
+package ru.example.controller.productManagement.category.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import ru.filin.HavachMVC.model.productManagement.entities.Category;
-import ru.filin.HavachMVC.service.productManagement.category.CategoryService;
+import ru.example.model.productManagement.entities.Category;
+import ru.example.service.productManagement.category.CategoryService;
 
 import java.util.List;
 

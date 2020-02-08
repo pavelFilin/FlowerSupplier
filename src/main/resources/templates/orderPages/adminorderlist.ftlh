@@ -2,19 +2,19 @@
 
 <@pf.profile>
     <div class="container">
-        <div class="row" style="width: 130%">
+        <div class="row shadow-lg bg-white rounded" style="width: 130%" >
             <table class="table table-bordered table-hover" style="width: 140%">
                 <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
-                    <th>Date</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>phone</th>
-                    <th>Delivery Address</th>
-                    <th>Pay</th>
-                    <th>Pay type</th>
-                    <th>Status</th>
+                    <th>Дата</th>
+                    <th>Количество</th>
+                    <th>Цена</th>
+                    <th>Телефон</th>
+                    <th>Адрес</th>
+                    <th>Цена</th>
+                    <th>Способ оплаты</th>
+                    <th>Статус</th>
                 </tr>
                 </thead>
                 <tbody class="table-striped">

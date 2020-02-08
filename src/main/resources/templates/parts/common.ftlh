@@ -5,7 +5,7 @@
         <meta name="_csrf" content="${_csrf.token?if_exists}"/>
         <meta name="_csrf_header" content="${_csrf.headerName?if_exists}"/>
         <meta charset="UTF-8">
-        <title>Havach</title>
+        <title>Flower Supplier</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"

@@ -1,9 +1,9 @@
-package ru.filin.HavachMVC.service.orderManagement.impl;
+package ru.example.service.orderManagement.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.filin.HavachMVC.model.orderManagement.entities.CartItem;
-import ru.filin.HavachMVC.model.orderManagement.repositories.impl.CartRepositoryImpl;
+import ru.example.model.orderManagement.repositories.impl.CartRepositoryImpl;
+import ru.example.model.orderManagement.entities.CartItem;
 
 import java.util.List;
 

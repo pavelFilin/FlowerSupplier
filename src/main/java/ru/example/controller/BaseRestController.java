@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.controller;
+package ru.example.controller;
 
 import java.util.List;
 

@@ -17,7 +17,7 @@
                                     <input type="hidden" name="productId" value="${product.id}"/>
                                     <input type="hidden" name="quantity" value="1"/>
                                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block mt-3">Pick to cart</button>
+                                    <button type="submit" class="btn btn-green text-white btn-lg btn-block mt-3">Купить</button>
                                 </form>
                             </div>
                         </div>

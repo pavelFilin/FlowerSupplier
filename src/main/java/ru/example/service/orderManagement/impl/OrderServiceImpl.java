@@ -1,18 +1,18 @@
-package ru.filin.HavachMVC.service.orderManagement.impl;
+package ru.example.service.orderManagement.impl;
 
 import org.springframework.stereotype.Service;
-import ru.filin.HavachMVC.constants.OrderStatus;
-import ru.filin.HavachMVC.constants.PaymentStatus;
-import ru.filin.HavachMVC.constants.PaymentType;
-import ru.filin.HavachMVC.controller.DTO.Message;
-import ru.filin.HavachMVC.controller.DTO.OrderDTO;
-import ru.filin.HavachMVC.controller.DTO.OrderItemDTO;
-import ru.filin.HavachMVC.model.orderManagement.entities.CartItem;
-import ru.filin.HavachMVC.model.orderManagement.entities.Order;
-import ru.filin.HavachMVC.model.orderManagement.entities.OrderItemFull;
-import ru.filin.HavachMVC.model.orderManagement.repositories.OrderRepository;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
-import ru.filin.HavachMVC.service.productManagement.product.ProductService;
+import ru.example.constants.OrderStatus;
+import ru.example.constants.PaymentStatus;
+import ru.example.constants.PaymentType;
+import ru.example.controller.DTO.Message;
+import ru.example.controller.DTO.OrderDTO;
+import ru.example.controller.DTO.OrderItemDTO;
+import ru.example.model.orderManagement.entities.CartItem;
+import ru.example.model.orderManagement.entities.Order;
+import ru.example.model.orderManagement.entities.OrderItemFull;
+import ru.example.model.orderManagement.repositories.OrderRepository;
+import ru.example.model.productManagement.entities.Product;
+import ru.example.service.productManagement.product.ProductService;
 
 import java.util.Date;
 import java.util.HashMap;

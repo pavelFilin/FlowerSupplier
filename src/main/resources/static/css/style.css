@@ -1,3 +1,9 @@
+body {
+    font-family: helvetica, serif;
+    font-weight: bolder;
+    background-color: #e6ffe1;
+}
+
 
 .centered-form {
     margin-top: 100px;;
@@ -9,7 +15,7 @@
 /*}*/
 
 .log-up-button {
-    border-radius: 50px;
+    border-radius: 10px;
     width: 50%;
 }
 
@@ -65,4 +71,16 @@
 .product-price-list{
     font-size: 2rem;
     margin-bottom: -15px;
+}
+
+.bg-success {
+    background-color: #005b1e!important;
+}
+
+.btn-green {
+    background-color: #005b1e;
+}
+
+.btn-green:hover {
+    background-color: #009031;
 }

@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.controller.userManagement.profile.imp;
+package ru.example.controller.userManagement.profile.imp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.filin.HavachMVC.controller.userManagement.profile.ProfileController;
-import ru.filin.HavachMVC.model.userManagement.entities.User;
-import ru.filin.HavachMVC.model.userManagement.entities.UserContacts;
-import ru.filin.HavachMVC.service.userManagement.UserContactsService;
-import ru.filin.HavachMVC.service.userManagement.UserService;
+import ru.example.service.userManagement.UserService;
+import ru.example.controller.userManagement.profile.ProfileController;
+import ru.example.model.userManagement.entities.User;
+import ru.example.model.userManagement.entities.UserContacts;
+import ru.example.service.userManagement.UserContactsService;
 
 import java.util.List;
 

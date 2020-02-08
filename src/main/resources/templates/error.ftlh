@@ -1,7 +1,7 @@
 <#import "parts/common.ftlh" as c>
 
 <@c.page>
-    <h1>Something went wrong! </h1>
-    <h2>Our Engineers are on it</h2>
-    <a href="/">Go Home</a>
+    <h1>Что-то пошло не так </h1>
+    <h2>Мы работаем над этим</h2>
+    <a href="/">Вернуться домой</a>
 </@c.page>

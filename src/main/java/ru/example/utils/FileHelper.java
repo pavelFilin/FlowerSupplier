@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.utils;
+package ru.example.utils;
 
 import org.springframework.web.multipart.MultipartFile;
 

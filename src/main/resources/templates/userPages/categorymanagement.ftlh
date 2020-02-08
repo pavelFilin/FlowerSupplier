@@ -6,7 +6,7 @@
             <div class="col-md-3 ">
                 <#include "../parts/userprofilenav.ftlh"/>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9 shadow-lg bg-white rounded pt-3">
                 <#if message??>
                     <div class="alert alert-danger" role="alert">
                         ${message}
@@ -17,7 +17,7 @@
                         <table class="table table-bordered table-hover category-display ">
                             <thead class="thead-dark">
                             <th>ID</th>
-                            <th>Title</th>
+                            <th>Название</th>
                             <th>Parent ID</th>
                             <th></th>
                             </thead>
@@ -46,11 +46,11 @@
                     </div>
                     <div class="col-md-4">
                         <form action="/category" method="POST">
-                            <h4>Add new category</h4>
+                            <h4>Добавить новую категорию</h4>
                             <div class="form-group">
-                                <label for="titleCategory">Title</label>
+                                <label for="titleCategory">Название</label>
                                 <input name="title" minlength="3" maxlength="50" type="text" class="form-control"
-                                       id="titleCategory" placeholder="Enter title">
+                                       id="titleCategory" placeholder="Название">
                             </div>
                             <div class="form-group">
                                 <label for="parentCategory">Parent ID</label>
@@ -62,7 +62,7 @@
                                 </select>
                             </div>
                             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                            <input type="submit" class="btn btn-primary btn-sm btn-block" value="submit">
+                            <input type="submit" class="btn btn-green text-white btn-sm btn-block" value="Создать">
                         </form>
                     </div>
                 </div>

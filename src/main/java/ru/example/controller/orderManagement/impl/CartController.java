@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.controller.orderManagement.impl;
+package ru.example.controller.orderManagement.impl;
 
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,15 +6,15 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.filin.HavachMVC.controller.DTO.CartConvector;
-import ru.filin.HavachMVC.controller.DTO.CartDTO;
-import ru.filin.HavachMVC.model.orderManagement.entities.CartItem;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
-import ru.filin.HavachMVC.model.userManagement.entities.User;
-import ru.filin.HavachMVC.model.userManagement.entities.UserContacts;
-import ru.filin.HavachMVC.service.orderManagement.impl.CartServiceImpl;
-import ru.filin.HavachMVC.service.productManagement.product.ProductService;
-import ru.filin.HavachMVC.service.userManagement.UserContactsService;
+import ru.example.controller.DTO.CartConvector;
+import ru.example.controller.DTO.CartDTO;
+import ru.example.model.orderManagement.entities.CartItem;
+import ru.example.model.productManagement.entities.Product;
+import ru.example.model.userManagement.entities.User;
+import ru.example.model.userManagement.entities.UserContacts;
+import ru.example.service.orderManagement.impl.CartServiceImpl;
+import ru.example.service.productManagement.product.ProductService;
+import ru.example.service.userManagement.UserContactsService;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -39,7 +39,7 @@ public class CartController {
     @GetMapping
     public String getCartPage(@AuthenticationPrincipal User user, Model model) {
         List<CartItem> cart = cartService.findCartsByUser(user.getId());
-        List<CartDTO> cartDTOS = cart.stream().map(c -> CartConvector.toCartDTO(c)).collect(Collectors.toList());
+        List<CartDTO> cartDTOS = cart.stream().map(CartConvector::toCartDTO).collect(Collectors.toList());
         UserContacts userContacts = userContactsService.getByUserId(user.getId());
 
         int totalQuantity = cartDTOS.stream().mapToInt(CartDTO::getQuantity).sum();

@@ -1,8 +1,8 @@
-package ru.filin.HavachMVC.controller.DTO;
+package ru.example.controller.DTO;
 
 import lombok.Data;
-import ru.filin.HavachMVC.model.orderManagement.entities.OrderItemFull;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
+import ru.example.model.orderManagement.entities.OrderItemFull;
+import ru.example.model.productManagement.entities.Product;
 
 @Data
 public class OrderItemDTO {

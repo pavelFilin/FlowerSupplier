@@ -2,17 +2,17 @@
 
 <@pf.profile>
     <div class="container">
-        <div class="row">
+        <div class="row shadow-lg bg-white rounded">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                 <tr>
-                    <th>Date</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Delivery Address</th>
-                    <th>Pay</th>
-                    <th>Pay type</th>
-                    <th>Status</th>
+                    <th>Дата</th>
+                    <th>Количество</th>
+                    <th>Цена</th>
+                    <th>Адрес доставки</th>
+                    <th>Стоимость</th>
+                    <th>Способ оплаты</th>
+                    <th>Статус</th>
                 </tr>
                 </thead>
                 <tbody class="table-striped">

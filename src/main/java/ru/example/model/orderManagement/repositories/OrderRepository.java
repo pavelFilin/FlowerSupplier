@@ -1,14 +1,14 @@
-package ru.filin.HavachMVC.model.orderManagement.repositories;
+package ru.example.model.orderManagement.repositories;
 
 import org.springframework.jdbc.core.RowMapper;
-import ru.filin.HavachMVC.constants.OrderStatus;
-import ru.filin.HavachMVC.constants.PaymentStatus;
-import ru.filin.HavachMVC.constants.PaymentType;
-import ru.filin.HavachMVC.model.BaseRepository;
-import ru.filin.HavachMVC.model.orderManagement.entities.CartItem;
-import ru.filin.HavachMVC.model.orderManagement.entities.Order;
-import ru.filin.HavachMVC.model.orderManagement.entities.OrderItemFull;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
+import ru.example.constants.OrderStatus;
+import ru.example.constants.PaymentType;
+import ru.example.model.productManagement.entities.Product;
+import ru.example.constants.PaymentStatus;
+import ru.example.model.BaseRepository;
+import ru.example.model.orderManagement.entities.CartItem;
+import ru.example.model.orderManagement.entities.Order;
+import ru.example.model.orderManagement.entities.OrderItemFull;
 
 import java.sql.ResultSet;
 import java.util.Date;

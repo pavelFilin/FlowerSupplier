@@ -1,7 +1,7 @@
-package ru.filin.HavachMVC.controller.productManagement.product.rest;
+package ru.example.controller.productManagement.product.rest;
 
-import ru.filin.HavachMVC.model.BaseRepository;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
+import ru.example.model.BaseRepository;
+import ru.example.model.productManagement.entities.Product;
 
 public interface ProductRestController extends BaseRepository<Product> {
 }

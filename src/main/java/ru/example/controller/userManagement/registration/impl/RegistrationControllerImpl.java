@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.controller.userManagement.registration.impl;
+package ru.example.controller.userManagement.registration.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.filin.HavachMVC.controller.userManagement.registration.RegistrationController;
-import ru.filin.HavachMVC.model.userManagement.entities.User;
-import ru.filin.HavachMVC.service.userManagement.UserService;
+import ru.example.service.userManagement.UserService;
+import ru.example.controller.userManagement.registration.RegistrationController;
+import ru.example.model.userManagement.entities.User;
 
 @Controller
 public class RegistrationControllerImpl implements RegistrationController {

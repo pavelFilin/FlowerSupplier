@@ -1,15 +1,15 @@
-package ru.filin.HavachMVC.service.productManagement.product.impl;
+package ru.example.service.productManagement.product.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import ru.filin.HavachMVC.model.productManagement.entities.Category;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
-import ru.filin.HavachMVC.model.productManagement.repositories.category.CategoryRepository;
-import ru.filin.HavachMVC.model.productManagement.repositories.product.ProductRepository;
-import ru.filin.HavachMVC.service.productManagement.product.ProductService;
-import ru.filin.HavachMVC.utils.FileHelper;
+import ru.example.model.productManagement.entities.Category;
+import ru.example.model.productManagement.entities.Product;
+import ru.example.model.productManagement.repositories.category.CategoryRepository;
+import ru.example.model.productManagement.repositories.product.ProductRepository;
+import ru.example.service.productManagement.product.ProductService;
+import ru.example.utils.FileHelper;
 
 import java.io.IOException;
 import java.util.List;

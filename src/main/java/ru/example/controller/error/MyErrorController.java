@@ -1,10 +1,10 @@
-package ru.filin.HavachMVC.controller.error;
+package ru.example.controller.error;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import ru.filin.HavachMVC.controller.error.exception.ResourceNotFoundException;
+import ru.example.controller.error.exception.ResourceNotFoundException;
 
 @Controller
 public class MyErrorController {

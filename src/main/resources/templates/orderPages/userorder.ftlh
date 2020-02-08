@@ -6,12 +6,12 @@
             <table class="table table-bordered table-hover table-info">
                 <thead class="thead-dark">
                 <tr>
-                    <th>Products</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Payment Status</th>
-                    <th>Payment Type</th>
-                    <th class="warning">Order Status</th>
+                    <th>Товары</th>
+                    <th>Количество</th>
+                    <th>Цена</th>
+                    <th>Статус оплаты</th>
+                    <th>Способ оплаты</th>
+                    <th class="warning">Статус заказа</th>
                 </tr>
                 </thead>
                 <tbody>

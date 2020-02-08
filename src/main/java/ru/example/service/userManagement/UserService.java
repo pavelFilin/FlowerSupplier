@@ -1,10 +1,10 @@
-package ru.filin.HavachMVC.service.userManagement;
+package ru.example.service.userManagement;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.filin.HavachMVC.model.userManagement.entities.User;
-import ru.filin.HavachMVC.service.BaseService;
+import ru.example.model.userManagement.entities.User;
+import ru.example.service.BaseService;
 
 import java.util.Map;
 

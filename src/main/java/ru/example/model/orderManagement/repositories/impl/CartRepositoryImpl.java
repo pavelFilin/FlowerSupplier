@@ -1,10 +1,10 @@
-package ru.filin.HavachMVC.model.orderManagement.repositories.impl;
+package ru.example.model.orderManagement.repositories.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import ru.filin.HavachMVC.model.orderManagement.entities.CartItem;
+import ru.example.model.orderManagement.entities.CartItem;
 
 import java.util.List;
 

@@ -1,11 +1,11 @@
-package ru.filin.HavachMVC.service.userManagement.impl;
+package ru.example.service.userManagement.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
-import ru.filin.HavachMVC.model.userManagement.entities.UserContacts;
-import ru.filin.HavachMVC.model.userManagement.repositories.UserContactsRepository;
-import ru.filin.HavachMVC.service.userManagement.UserContactsService;
+import ru.example.model.userManagement.entities.UserContacts;
+import ru.example.service.userManagement.UserContactsService;
+import ru.example.model.userManagement.repositories.UserContactsRepository;
 
 import java.util.List;
 

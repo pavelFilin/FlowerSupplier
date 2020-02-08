@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.configuration;
+package ru.example.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

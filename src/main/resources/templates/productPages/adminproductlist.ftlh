@@ -12,30 +12,30 @@
                         <form class="form-group row" style="width: 100%">
                             <div class="col-md-6">
                                 <input class="form-control" <#if filter??>value="${filter}" </#if> name="filter"
-                                       placeholder="search" type="text">
+                                       placeholder="Найти" type="text">
                             </div>
                             <div class="col-md-5">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" <#if active??>checked</#if> type="radio"
                                            name="active" id="inlineRadio1"
                                            value="none">
-                                    <label class="form-check-label" for="inlineRadio1">none</label>
+                                    <label class="form-check-label" for="inlineRadio1">Все</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" <#if active?? && active == "disabled">checked</#if>
                                            type="radio" name="active" id="inlineRadio2"
                                            value="disabled">
-                                    <label class="form-check-label" for="inlineRadio2">disabled</label>
+                                    <label class="form-check-label" for="inlineRadio2">Деактивированные</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" <#if active?? && active == "active">checked</#if>
                                            type="radio" name="active" id="inlineRadio3"
                                            value="active">
-                                    <label class="form-check-label" for="inlineRadio3">active</label>
+                                    <label class="form-check-label" for="inlineRadio3">Активированные</label>
                                 </div>
                             </div>
                             <div class="col-md-1">
-                                <input class="btn btn-info" value="search" type="submit">
+                                <input class="btn btn-green text-white" value="Поиск" type="submit">
                             </div>
                         </form>
                     </div>
@@ -44,11 +44,11 @@
                             <thead class="thead-dark">
                             <tr>
                                 <th>Id</th>
-                                <th>Photo</th>
-                                <th>Product Name</th>
-                                <th>Category Name</th>
-                                <th>Stock</th>
-                                <th>Active</th>
+                                <th>Фото</th>
+                                <th>Наименование</th>
+                                <th>Категория</th>
+                                <th>На складе</th>
+                                <th>Активность</th>
                             </tr>
                             </thead>
                             <tbody class="table-striped">

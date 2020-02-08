@@ -1,9 +1,9 @@
-package ru.filin.HavachMVC.controller.DTO;
+package ru.example.controller.DTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.filin.HavachMVC.model.orderManagement.entities.CartItem;
-import ru.filin.HavachMVC.service.productManagement.product.ProductService;
+import ru.example.model.orderManagement.entities.CartItem;
+import ru.example.service.productManagement.product.ProductService;
 
 @Component
 public class CartConvector {
@@ -18,7 +18,7 @@ public class CartConvector {
 
     public static CartDTO toCartDTO(CartItem cart) {
         CartDTO cartDTO = new CartDTO();
-        cart.setId(cart.getId());
+        cartDTO.setId(cart.getId());
         cartDTO.setProduct(productService.getById(cart.getProductId()));
         cartDTO.setQuantity(cart.getQuantity());
         return cartDTO;

@@ -1,11 +1,11 @@
-package ru.filin.HavachMVC.model.productManagement.repositories.product.impl;
+package ru.example.model.productManagement.repositories.product.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
-import ru.filin.HavachMVC.model.productManagement.repositories.product.ProductRepository;
+import ru.example.model.productManagement.entities.Product;
+import ru.example.model.productManagement.repositories.product.ProductRepository;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.service.userManagement.impl;
+package ru.example.service.userManagement.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -8,14 +8,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.filin.HavachMVC.model.userManagement.RoleConstant;
-import ru.filin.HavachMVC.model.userManagement.entities.Role;
-import ru.filin.HavachMVC.model.userManagement.entities.User;
-import ru.filin.HavachMVC.model.userManagement.entities.UserContacts;
-import ru.filin.HavachMVC.model.userManagement.repositories.UserRepository;
-import ru.filin.HavachMVC.service.mail.MailSender;
-import ru.filin.HavachMVC.service.userManagement.UserContactsService;
-import ru.filin.HavachMVC.service.userManagement.UserService;
+import ru.example.model.userManagement.RoleConstant;
+import ru.example.model.userManagement.entities.Role;
+import ru.example.model.userManagement.entities.User;
+import ru.example.model.userManagement.entities.UserContacts;
+import ru.example.model.userManagement.repositories.UserRepository;
+import ru.example.service.userManagement.UserContactsService;
+import ru.example.service.userManagement.UserService;
+import ru.example.service.mail.MailSender;
 
 import java.util.*;
 import java.util.stream.Collectors;

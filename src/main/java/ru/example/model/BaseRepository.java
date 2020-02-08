@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.model;
+package ru.example.model;
 
 import java.util.List;
 

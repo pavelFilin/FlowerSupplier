@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.model.userManagement.entities;
+package ru.example.model.userManagement.entities;
 
 import lombok.Data;
 

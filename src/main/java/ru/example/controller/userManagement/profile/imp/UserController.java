@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.controller.userManagement.profile.imp;
+package ru.example.controller.userManagement.profile.imp;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -6,14 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.filin.HavachMVC.model.userManagement.RoleConstant;
-import ru.filin.HavachMVC.model.userManagement.entities.User;
-import ru.filin.HavachMVC.service.userManagement.UserService;
+import ru.example.model.userManagement.RoleConstant;
+import ru.example.service.userManagement.UserService;
+import ru.example.model.userManagement.entities.User;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Controller

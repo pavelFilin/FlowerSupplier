@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.model.userManagement;
+package ru.example.model.userManagement;
 
 public enum RoleConstant {
     ADMIN(1), USER(2);

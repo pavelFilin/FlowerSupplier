@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <h4>Your Profile</h4>
+                                <h4>Профиль</h4>
                                 <hr>
                             </div>
                         </div>
@@ -19,9 +19,9 @@
                             <div class="col-md-12">
                                 <form action="/user/profile" method="POST">
                                     <div class="form-group row">
-                                        <label for="username" class="col-4 col-form-label">First name</label>
+                                        <label for="username" class="col-4 col-form-label">Имя</label>
                                         <div class="col-8">
-                                            <input id="username" name="firstName" placeholder="Username"
+                                            <input id="username" name="firstName" placeholder="Имя"
                                                    class="form-control here" required="required"
                                                     <#if user??>
                                                         value="${user.firstName?if_exists}"
@@ -30,9 +30,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="name" class="col-4 col-form-label">Last name</label>
+                                        <label for="name" class="col-4 col-form-label">Фамилия</label>
                                         <div class="col-8">
-                                            <input id="name" name="lastName" placeholder="First Name"
+                                            <input id="name" name="lastName" placeholder="Фамилия"
                                                    class="form-control here"
                                                    required="required"
                                                     <#if user??>
@@ -52,40 +52,38 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="newpass" class="col-4 col-form-label">New Password</label>
+                                        <label for="newpass" class="col-4 col-form-label">Новый пароль</label>
                                         <div class="col-8">
-                                            <input id="newpass" name="password" placeholder="New Password"
+                                            <input id="newpass" name="password" placeholder="Новый пароль"
                                                    class="form-control here" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="phone" class="col-4 col-form-label">Phone</label>
+                                        <label for="phone" class="col-4 col-form-label">Телефон</label>
                                         <div class="col-8">
                                             <input id="phone" name="phone"
                                                     <#if userContacts??>
                                                    value="${userContacts.phone?if_exists}"
                                                    </#if>
-                                                   placeholder="phone"
+                                                   placeholder="+7**********"
                                                    class="form-control here" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="address" class="col-4 col-form-label">Address</label>
+                                        <label for="address" class="col-4 col-form-label">Адрес</label>
                                         <div class="col-8">
                                             <input id="address" name="address"
                                                     <#if userContacts??>
                                                    value="${userContacts.address?if_exists}"
                                                    </#if>
-                                                   placeholder="Address"
+                                                   placeholder="Адрес"
                                                    class="form-control here" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="offset-4 col-8">
                                             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                                            <button name="submit" type="submit" class="btn btn-primary">Update My
-                                                Profile
-                                            </button>
+                                            <button name="submit" type="submit" class="btn btn-green text-white">Сохранить</button>
                                         </div>
                                     </div>
                                 </form>

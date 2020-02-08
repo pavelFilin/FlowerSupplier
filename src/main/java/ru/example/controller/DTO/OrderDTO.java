@@ -1,10 +1,10 @@
-package ru.filin.HavachMVC.controller.DTO;
+package ru.example.controller.DTO;
 
 import lombok.Data;
-import ru.filin.HavachMVC.constants.OrderStatus;
-import ru.filin.HavachMVC.constants.PaymentStatus;
-import ru.filin.HavachMVC.constants.PaymentType;
-import ru.filin.HavachMVC.model.orderManagement.entities.Order;
+import ru.example.constants.OrderStatus;
+import ru.example.constants.PaymentStatus;
+import ru.example.constants.PaymentType;
+import ru.example.model.orderManagement.entities.Order;
 
 import java.util.ArrayList;
 import java.util.Date;

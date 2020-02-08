@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.model.productManagement.entities;
+package ru.example.model.productManagement.entities;
 
 import lombok.Data;
 

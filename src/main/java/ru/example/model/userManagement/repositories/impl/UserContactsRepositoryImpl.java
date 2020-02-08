@@ -1,10 +1,10 @@
-package ru.filin.HavachMVC.model.userManagement.repositories.impl;
+package ru.example.model.userManagement.repositories.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import ru.filin.HavachMVC.model.userManagement.entities.UserContacts;
-import ru.filin.HavachMVC.model.userManagement.repositories.UserContactsRepository;
+import ru.example.model.userManagement.entities.UserContacts;
+import ru.example.model.userManagement.repositories.UserContactsRepository;
 
 import java.util.List;
 

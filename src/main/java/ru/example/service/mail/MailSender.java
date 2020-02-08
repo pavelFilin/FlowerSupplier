@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.service.mail;
+package ru.example.service.mail;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

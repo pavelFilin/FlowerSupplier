@@ -1,8 +1,8 @@
-package ru.filin.HavachMVC.model.userManagement.repositories;
+package ru.example.model.userManagement.repositories;
 
 import org.springframework.jdbc.core.RowMapper;
-import ru.filin.HavachMVC.model.BaseRepository;
-import ru.filin.HavachMVC.model.userManagement.entities.UserContacts;
+import ru.example.model.userManagement.entities.UserContacts;
+import ru.example.model.BaseRepository;
 
 import java.sql.ResultSet;
 

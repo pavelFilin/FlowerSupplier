@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.constants;
+package ru.example.constants;
 
 public enum OrderStatus {
     PROCESSING,

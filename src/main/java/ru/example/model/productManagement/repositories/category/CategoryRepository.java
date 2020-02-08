@@ -1,8 +1,8 @@
-package ru.filin.HavachMVC.model.productManagement.repositories.category;
+package ru.example.model.productManagement.repositories.category;
 
 import org.springframework.jdbc.core.RowMapper;
-import ru.filin.HavachMVC.model.productManagement.entities.Category;
-import ru.filin.HavachMVC.service.BaseService;
+import ru.example.model.productManagement.entities.Category;
+import ru.example.service.BaseService;
 
 import java.sql.ResultSet;
 import java.util.List;

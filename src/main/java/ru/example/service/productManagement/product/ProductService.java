@@ -1,9 +1,9 @@
-package ru.filin.HavachMVC.service.productManagement.product;
+package ru.example.service.productManagement.product;
 
 
 import org.springframework.web.multipart.MultipartFile;
-import ru.filin.HavachMVC.model.BaseRepository;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
+import ru.example.model.productManagement.entities.Product;
+import ru.example.model.BaseRepository;
 
 import java.io.IOException;
 import java.util.List;

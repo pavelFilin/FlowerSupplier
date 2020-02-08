@@ -1,7 +1,7 @@
-package ru.filin.HavachMVC.model.userManagement.repositories;
+package ru.example.model.userManagement.repositories;
 
-import ru.filin.HavachMVC.model.BaseRepository;
-import ru.filin.HavachMVC.model.userManagement.entities.User;
+import ru.example.model.userManagement.entities.User;
+import ru.example.model.BaseRepository;
 
 public interface UserRepository extends BaseRepository<User> {
     User getByEmail(String email);

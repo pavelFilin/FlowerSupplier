@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.controller.productManagement.product;
+package ru.example.controller.productManagement.product;
 
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,12 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
-import ru.filin.HavachMVC.controller.DTO.ProductDTO;
-import ru.filin.HavachMVC.model.productManagement.entities.Category;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
-import ru.filin.HavachMVC.model.userManagement.entities.User;
-import ru.filin.HavachMVC.service.productManagement.category.CategoryService;
-import ru.filin.HavachMVC.service.productManagement.product.ProductService;
+import ru.example.controller.DTO.ProductDTO;
+import ru.example.model.productManagement.entities.Product;
+import ru.example.service.productManagement.category.CategoryService;
+import ru.example.service.productManagement.product.ProductService;
+import ru.example.model.productManagement.entities.Category;
+import ru.example.model.userManagement.entities.User;
 
 import java.util.Comparator;
 import java.util.List;

@@ -1,8 +1,8 @@
-package ru.filin.HavachMVC.controller.DTO;
+package ru.example.controller.DTO;
 
 import lombok.Data;
-import ru.filin.HavachMVC.model.productManagement.entities.Category;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
+import ru.example.model.productManagement.entities.Category;
+import ru.example.model.productManagement.entities.Product;
 
 @Data
 public class ProductDTO {

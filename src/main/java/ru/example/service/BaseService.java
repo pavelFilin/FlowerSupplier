@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.service;
+package ru.example.service;
 
 import java.util.List;
 

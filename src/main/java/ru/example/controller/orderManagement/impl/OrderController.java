@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.controller.orderManagement.impl;
+package ru.example.controller.orderManagement.impl;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -6,12 +6,12 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import ru.filin.HavachMVC.constants.OrderStatus;
-import ru.filin.HavachMVC.controller.DTO.Message;
-import ru.filin.HavachMVC.controller.DTO.OrderDTO;
-import ru.filin.HavachMVC.model.orderManagement.entities.Order;
-import ru.filin.HavachMVC.model.userManagement.entities.User;
-import ru.filin.HavachMVC.service.orderManagement.impl.OrderServiceImpl;
+import ru.example.constants.OrderStatus;
+import ru.example.controller.DTO.OrderDTO;
+import ru.example.service.orderManagement.impl.OrderServiceImpl;
+import ru.example.controller.DTO.Message;
+import ru.example.model.orderManagement.entities.Order;
+import ru.example.model.userManagement.entities.User;
 
 import java.util.Arrays;
 import java.util.Comparator;

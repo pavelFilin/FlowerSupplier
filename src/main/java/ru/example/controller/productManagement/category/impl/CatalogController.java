@@ -1,4 +1,4 @@
-package ru.filin.HavachMVC.controller.productManagement.category.impl;
+package ru.example.controller.productManagement.category.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,10 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.filin.HavachMVC.model.productManagement.entities.Category;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
-import ru.filin.HavachMVC.service.productManagement.category.CategoryService;
-import ru.filin.HavachMVC.service.productManagement.product.ProductService;
+import ru.example.model.productManagement.entities.Product;
+import ru.example.service.productManagement.category.CategoryService;
+import ru.example.service.productManagement.product.ProductService;
+import ru.example.model.productManagement.entities.Category;
 
 import java.util.List;
 import java.util.stream.Collectors;

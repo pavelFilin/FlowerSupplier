@@ -1,10 +1,10 @@
-package ru.filin.HavachMVC.controller.productManagement.product.rest.impl;
+package ru.example.controller.productManagement.product.rest.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.filin.HavachMVC.controller.productManagement.product.rest.ProductRestController;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
-import ru.filin.HavachMVC.service.productManagement.product.ProductService;
+import ru.example.controller.productManagement.product.rest.ProductRestController;
+import ru.example.model.productManagement.entities.Product;
+import ru.example.service.productManagement.product.ProductService;
 
 import java.util.List;
 

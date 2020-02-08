@@ -1,11 +1,11 @@
-package ru.filin.HavachMVC.controller.orderManagement.impl;
+package ru.example.controller.orderManagement.impl;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import ru.filin.HavachMVC.service.orderManagement.impl.OrderServiceImpl;
+import ru.example.service.orderManagement.impl.OrderServiceImpl;
 
 @Controller
 @RequestMapping("/order")

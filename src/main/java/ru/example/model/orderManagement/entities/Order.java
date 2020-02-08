@@ -1,9 +1,9 @@
-package ru.filin.HavachMVC.model.orderManagement.entities;
+package ru.example.model.orderManagement.entities;
 
 import lombok.Data;
-import ru.filin.HavachMVC.constants.OrderStatus;
-import ru.filin.HavachMVC.constants.PaymentStatus;
-import ru.filin.HavachMVC.constants.PaymentType;
+import ru.example.constants.OrderStatus;
+import ru.example.constants.PaymentType;
+import ru.example.constants.PaymentStatus;
 
 import java.util.Date;
 

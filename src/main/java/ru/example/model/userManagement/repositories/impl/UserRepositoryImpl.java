@@ -1,12 +1,12 @@
-package ru.filin.HavachMVC.model.userManagement.repositories.impl;
+package ru.example.model.userManagement.repositories.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import ru.filin.HavachMVC.model.userManagement.entities.Role;
-import ru.filin.HavachMVC.model.userManagement.entities.User;
-import ru.filin.HavachMVC.model.userManagement.repositories.UserRepository;
+import ru.example.model.userManagement.entities.Role;
+import ru.example.model.userManagement.entities.User;
+import ru.example.model.userManagement.repositories.UserRepository;
 
 import java.util.*;
 

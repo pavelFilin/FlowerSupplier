@@ -2,11 +2,11 @@
 <#include "parts/security.ftlh">
 
 <@c.page>
-    <div class="jumbotron">
-        <h1 class="display-4">Havach</h1>
-        <p class="lead">This is a simple food service, where you do a click - we deliver food</p>
+    <div class="jumbotron" style="background: #437f4b">
+        <h1 class="display-4">Flower Supplier</h1>
+        <p class="lead">Приложение создано для снабжения торговых пунктов</p>
         <hr class="my-4">
-        <p>Please, check our categories list</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        <p>Зарегистрируйтесь и посмотрите наш список товаров</p>
+        <a class="btn btn-green text-white btn-lg" href="#" role="button">Что нового?</a>
     </div>
 </@c.page>

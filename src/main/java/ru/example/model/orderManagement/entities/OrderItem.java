@@ -1,7 +1,7 @@
-package ru.filin.HavachMVC.model.orderManagement.entities;
+package ru.example.model.orderManagement.entities;
 
 import lombok.Data;
-import ru.filin.HavachMVC.model.productManagement.entities.Product;
+import ru.example.model.productManagement.entities.Product;
 
 @Data
 public class OrderItem {
