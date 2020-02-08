@@ -2,7 +2,7 @@
 
 <@c.page>
     <div class="container">
-        <div class="row">
+        <div class="row ">
             <table class="table table-bordered table-hover table-info">
                 <thead class="thead-dark">
                 <tr>
@@ -26,7 +26,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="row">
+        <div class="row shadow-lg bg-white rounded">
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                 <th></th>

@@ -2,7 +2,7 @@
 
 <@c.page>
     <div class="container">
-        <div class="row">
+        <div class="row ">
             <#if message??><div class="alert alert-danger" role="alert">
                 ${message}
             </div></#if>
