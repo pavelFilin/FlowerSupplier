@@ -18,7 +18,7 @@
                 <tbody class="table-striped">
                 <#list orders as order>
                     <tr>
-                        <td>${order.timeCreated?datetime}</td>
+                        <td><a href="/order/${order.getId()}">${order.timeCreated?datetime}</a></td>
                         <td>${order.quantity}</td>
                         <td>${order.finalPrice}</td>
                         <td>${order.address}</td>
