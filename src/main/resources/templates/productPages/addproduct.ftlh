@@ -34,9 +34,19 @@
 
                             <div class="form-group col-md-4 offset-md-2">
                                 <label for="product-stock">На складе</label>
-                                <input name="На складе" min="0" max="1000000" type="number" class="form-control"
+                                <input name="stock" min="0" max="1000000" type="number" class="form-control"
                                        id="product-stock"
-                                       placeholder="<h>">
+                                       placeholder="На складе">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4 offset-md-8">
+                                <label for="product-active">Ативировать сразу?</label>
+                                <select name="active" id="product-active">
+                                    <option value="true">да</option>
+                                    <option value="false">нет</option>
+                                    <option value="false">ынет</option>
+                                </select>
                             </div>
                         </div>
                         <hr>

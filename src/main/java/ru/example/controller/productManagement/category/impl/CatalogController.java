@@ -35,11 +35,13 @@ public class CatalogController {
     public String catalog(@RequestParam(required = false) Integer catalogId, Model model) {
         List<Product> products;
         if (catalogId != null) {
-            products = productService.findByCategoryId(categoryService.getById(catalogId).getId());
-            products = products.stream().filter(Product::isActive).collect(Collectors.toList());
+            products = productService.findByCategoryId(categoryService.getById(catalogId).getId()).stream()
+                    .filter(Product::isActive)
+                    .collect(Collectors.toList());
         } else {
-            products = productService.getAll();
-            products = products.stream().filter(Product::isActive).collect(Collectors.toList());
+            products = productService.getAll().stream()
+                    .filter(Product::isActive)
+                    .collect(Collectors.toList());
         }
 
         model.addAttribute("products", products);
@@ -51,8 +53,9 @@ public class CatalogController {
 
     @GetMapping("/productlist/{categoryId}")
     public String getProductsByCategory(@PathVariable long categoryId, Model model) {
-        List<Product> products = productService.findByCategoryId(categoryId);
-        products = products.stream().filter(Product::isActive).collect(Collectors.toList());
+        List<Product> products = productService.findByCategoryId(categoryId).stream()
+                .filter(Product::isActive)
+                .collect(Collectors.toList());
         model.addAttribute("products", products);
         return "shopPages/productlist";
     }

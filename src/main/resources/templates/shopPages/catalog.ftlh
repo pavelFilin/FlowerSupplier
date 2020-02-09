@@ -12,11 +12,12 @@
             </div>
             <div class="col-md-8 products">
                 <div class="row">
-                    <div class="col-sm-4">
-                        <#list products as product>
+                    <#list products as product>
+                        <div class="col-sm-4">
                             <div class="product">
                                 <div class="product-img">
-                                    <a href="/product/${product.getId()}"><img src="/img/${product.photo?if_exists}" alt=""></a>
+                                    <a href="/product/${product.getId()}"><img src="/img/${product.photo?if_exists}"
+                                                                               alt=""></a>
                                 </div>
                                 <p class="product-title">
                                     <a href="/product/${product.getId()}">${product.getName()}</a>
@@ -27,11 +28,13 @@
                                     <input type="hidden" name="productId" value="${product.id}"/>
                                     <input type="hidden" name="quantity" value="1"/>
                                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                                    <button type="submit" class="btn btn-green text-white btn-lg btn-block">Купить</button>
+                                    <button type="submit" class="btn btn-green text-white btn-lg btn-block">Купить
+                                    </button>
                                 </form>
                             </div>
-                        </#list>
-                    </div>
+                        </div>
+                    </#list>
+
                 </div>
             </div>
             <#--        <div class="row mt-5">-->
