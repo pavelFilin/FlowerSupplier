@@ -6,8 +6,8 @@
             <div class="col-md-3 ">
                 <#include "../parts/userprofilenav.ftlh"/>
             </div>
-            <div class="col-md-9">
-                <div class="container ">
+            <div class="col-md-9 bg-white shadow-lg rounded pt-2">
+                <div class="container">
                     <div class="row">
                         <form class="form-group row" style="width: 100%">
                             <div class="col-md-6">
