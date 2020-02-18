@@ -14,6 +14,15 @@ public enum OrderStatus {
         this.name = name;
     }
 
+    public static OrderStatus getByName(String orderStatus) {
+        for (OrderStatus value : OrderStatus.values()) {
+            if (value.name.equals(orderStatus)) {
+                return value;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         return name;

@@ -45,7 +45,6 @@
                                 <select name="active" id="product-active">
                                     <option value="true">да</option>
                                     <option value="false">нет</option>
-                                    <option value="false">ынет</option>
                                 </select>
                             </div>
                         </div>

@@ -113,6 +113,6 @@ public class OrderServiceImpl {
 
 
     public void changeOrderStatus(long id, String orderStatus) {
-        orderRepository.changeOrderStatus(id, OrderStatus.valueOf(orderStatus));
+        orderRepository.changeOrderStatus(id, OrderStatus.getByName(orderStatus));
     }
 }

@@ -101,18 +101,21 @@ function changeProductStock(input, productId) {
     });
 }
 
-function changeProductActive(input, productId) {
+function changeProductActive(input, productId, active) {
     var token = $("meta[name='_csrf']").attr("content");
     var header = $("meta[name='_csrf_header']").attr("content");
     $(document).ajaxSend(function (e, xhr, options) {
         xhr.setRequestHeader(header, token);
     });
 
+    console.log(input.value);
 
+    let test = input.value?true:false;
+    console.log(test);
     $.ajax({
         method: "POST",
         url: "/product/change/active",
-        data: {productId: productId, active: input.value},
+        data: {productId: productId, active: !active},
         dataType: 'json',
         success: function (data) {
             if (data != "success") {

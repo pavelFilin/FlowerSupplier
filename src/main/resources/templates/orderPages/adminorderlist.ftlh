@@ -2,8 +2,8 @@
 
 <@pf.profile>
     <div class="container">
-        <div class="row shadow-lg bg-white rounded" style="width: 130%" >
-            <table class="table table-bordered table-hover" style="width: 140%">
+        <div class="row shadow-lg bg-white rounded" style="width: 140%" >
+            <table class="table table-bordered table-hover  shadow-lg bg-white rounded" style="width: 140%">
                 <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
