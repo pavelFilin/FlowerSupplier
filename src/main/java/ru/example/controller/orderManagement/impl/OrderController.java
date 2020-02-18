@@ -65,7 +65,7 @@ public class OrderController {
         if (!(StringUtils.isEmpty(phone) || StringUtils.isEmpty(address) || StringUtils.isEmpty(paymentType))) {
             orderId = orderService.makeOrder(user.getId(), phone, address, paymentType, message);
         } else {
-            redirectAttributes.addFlashAttribute("message", "Bad creditails");
+            redirectAttributes.addFlashAttribute("message", "Не все поля заданы корректно");
             return "redirect:/cart";
         }
 

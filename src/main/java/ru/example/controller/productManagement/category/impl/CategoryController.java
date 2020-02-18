@@ -6,19 +6,25 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import ru.example.model.productManagement.entities.Category;
+import ru.example.model.productManagement.entities.Product;
 import ru.example.service.productManagement.category.CategoryService;
+import ru.example.service.productManagement.product.ProductService;
 
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/category")
 public class CategoryController {
 
     private CategoryService categoryService;
+    private ProductService productService;
 
     @Autowired
-    public CategoryController(CategoryService categoryService) {
+    public CategoryController(CategoryService categoryService, ProductService productService) {
         this.categoryService = categoryService;
+        this.productService = productService;
     }
 
     @GetMapping
@@ -37,14 +43,21 @@ public class CategoryController {
 
     @PostMapping("/{id}")
     public String deleteCategory(@PathVariable long id, final RedirectAttributes redirectAttributes) {
-        Category category = categoryService.getById(id);
         List<Long> childIds = categoryService.getChildIds(id);
+        List<Product> products = productService.findByCategoryId(id);
+
         if (childIds.size() > 0) {
             redirectAttributes.addFlashAttribute(
                     "message",
-                    "This category id[" + id + "] has children categories " + childIds.toString());
+                    "Категория id[" + id + "] имеет дочерние категории " + childIds.toString());
         } else {
-            categoryService.delete(id);
+            if (products.size() > 0) {
+                redirectAttributes.addFlashAttribute(
+                        "message",
+                        "Категория id[" + id + "] имеет продукты " + products.stream().collect(Collectors.toMap(Product::getId, Product::getName)).toString());
+            } else {
+                categoryService.delete(id);
+            }
         }
 
         return "redirect:/category";
