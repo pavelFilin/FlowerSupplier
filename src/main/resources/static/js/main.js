@@ -110,7 +110,7 @@ function changeProductActive(input, productId, active) {
 
     console.log(input.value);
 
-    let test = input.value?true:false;
+    let test = input.checked;
     console.log(test);
     $.ajax({
         method: "POST",

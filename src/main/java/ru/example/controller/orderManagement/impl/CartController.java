@@ -73,7 +73,7 @@ public class CartController {
     public String changeQuantity(@AuthenticationPrincipal User user, @RequestParam("productId") long productId, @RequestParam("quantity") int quantity) {
         Product product = productService.getById(productId);
         if (product.getStock() < quantity) {
-            return new Gson().toJson(product.getName() +" is not available!");
+            return new Gson().toJson(product.getName() +" не доступен");
         }
 
         cartService.changeQuantity(user.getId(), productId, quantity);

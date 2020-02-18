@@ -60,7 +60,7 @@
                                     <td><a href="/product/${product.id}">${product.name}</a></td>
                                     <td>${product.categoryId} - ${product.category.title}</td>
                                     <td><input min=0, max="10000" type="number" class="form-control" value="${product.stock}" onchange="changeProductStock(this, ${product.id})"></td>
-                                    <td><input <#if product.active >checked</#if>  onchange="changeProductActive(this, ${product.id})" class="form-control-input"
+                                    <td><input <#if product.active >checked</#if>  onchange="changeProductActive(this, ${product.id}, ${product.active?c})" class="form-control-input"
                                                type="checkbox"/></td>
                                 </tr>
                             </#list>
